@@ -1,5 +1,5 @@
 # Crashary-MI
-
+---
 This repository is an open source copy of the Crashary Mass Inviter bot. The bot is designed to facilitate inviting members to a Minecraft realm. This README provides an overview of the script and instructions for running it.
 
 ## Requirements
@@ -54,3 +54,8 @@ Contributions to this project are welcome. If you encounter any issues or have s
 ## License
 
 This project is licensed under the BSD 3-Clause License.
+
+---
+``v1.0.0`` 
+
+**Crashary LLC © 2023**
