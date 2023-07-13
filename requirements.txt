@@ -1,0 +1,6 @@
+asyncio
+py-cord
+msal
+sqlite3
+python-dotenv
+aiohttp
