@@ -254,6 +254,21 @@ def date_check(name,
   if you also have method as "w", it will write the date to the file
   """
 
+# Date Checker funct
+def date_check(name,
+               hours=0,
+               weeks=0,
+               seconds=0,
+               minutes=0,
+               method="w",
+               overide=False):
+  """
+  Checks if Date in a file is past a certain time
+  If it is, return True
+  if it isn't, return False
+  if you also have method as "w", it will write the date to the file
+  """
+
   # Get the current time
   now = datetime.now()
 
@@ -891,14 +906,7 @@ async def daily_event():
   publiclogschannel = bot.get_channel(1128355347363541073)
   await publiclogschannel.send(embed=embeddaily)
 
-
 async def do_auto_purge():
-  """
-  This is unused now.
-
-  Not finished?
-  """
-
   async def purge():
     """
     Crashary MI Dev Team Guild: 1128350988798001213
@@ -969,9 +977,14 @@ async def do_auto_purge():
         )
 
         # Set the permissions for the new channel
+        role_reqs_tobesent = DISCORD_THROTTLE.rate_calc(len(roles))
+        
         for role, perms in zip(roles, perms):
           await new_channel.set_permissions(role, overwrite=perms)
+          print(f"""{ansify("green", "Set")} {role.name}'s permissions to {perms}""")
+          await asyncio.sleep(role_reqs_tobesent + 2)
 
+        await asyncio.sleep(1)
         await channel.delete()
         # await category.create_text_channel(name, topic=topic)
 
