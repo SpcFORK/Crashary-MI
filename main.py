@@ -301,7 +301,7 @@ class LinkProcess:
     self.completed = True
 
   async def start(self):
-    client_id = "e3224e84-2c6c-44c4-916a-4b877c4cb33c"
+    client_id = "" # Setup Client ID @ Azure Dev Dashboard
     scopes = ["XboxLive.signin"]
     authority = "https://login.microsoftonline.com/consumers"
     pca = PublicClientApplication(client_id, authority=authority)
