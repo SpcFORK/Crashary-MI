@@ -427,7 +427,7 @@ async def on_ready():
   # Round to nearest 1000
   total = math.ceil(total / 1000)
   await bot.change_presence(activity=discord.Activity(
-    name=f"{total}k Invites Sent", type=discord.ActivityType.watching))
+    name=f"realms get members", type=discord.ActivityType.watching))
 
   # Run the Daily Event
   await schedule_daily_event()
