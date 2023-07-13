@@ -174,6 +174,23 @@ def convert_permissions(permissions, mode="s"):
   if mode == "o":
     return overwrite
 
+# Perm int to perm strings
+def convert_permissions(permissions, mode="s"):
+  """Converts a permission integer to a discord.PermissionOverwrite object."""
+
+  _PD = {}
+
+  overwrite = discord.PermissionOverwrite()
+  for attr, bit in discord.Permissions.all():
+    if permissions & bit:
+      setattr(overwrite, attr, True)
+      _PD[attr] = True
+
+  if mode == "s":
+    return overwrite
+  if mode == "o":
+    return overwrite
+
 
 # EMERGENCY IF XBL.IO DOESN'T WORK/RATELIMITS
 async def fetch_gt(gamertag):
