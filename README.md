@@ -29,9 +29,12 @@ TOKEN=your_discord_bot_token
 
 4. Create a file named `playerxuids.txt` and add the Xuids of the players you want to invite, each on a separate line.
 
-6. Create a SQLite database file named `UserInfo.db` in the project directory with the relevant tables and fields.
+5. Create a SQLite database file named `UserInfo.db` in the project directory and run this command to setup tables and such:
+```
+python setupDatabase.py
+```
 
-8. Run the `main.py` script:
+6. Run the `main.py` script:
 ```
 python main.py
 ```
